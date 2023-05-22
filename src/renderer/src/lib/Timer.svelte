@@ -19,10 +19,10 @@
     function reset(){
         stopInterval();
         if(!break_on){
-            timer_counter_value = new Date(3600000); //new Date(10000)
+            timer_counter_value = new Date(10000); //new Date(3600000); //
         }
         else{
-            timer_counter_value = new Date(1500000); //new Date(5000)
+            timer_counter_value = new Date(5000); //new Date(1500000); //
         }
     }
 
@@ -41,9 +41,10 @@
                         handleChangeEvents(numOfDoneEventsBasedByTimeButInTimerLib);
                     }
                     stopInterval();
+                    break_on = !break_on;
+                    reset();
                     if(cycle_on){
-                        break_on = !break_on;
-                        reset();
+                        
                         start_interval();
                     }
                 }
